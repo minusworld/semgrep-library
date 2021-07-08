@@ -1,0 +1,6 @@
+rules:
+- id: class-rendered
+  languages: [javascript, typescript]
+  severity: INFO
+  message: $FUNC
+  pattern: <$CLASS ... />

@@ -1,0 +1,15 @@
+rules:
+- id: class-with-dangerouslysetinnerhtml
+  patterns:
+  - pattern-inside: |
+      class $CLASS {
+        ...
+        $FUNC(...) {
+          ...
+          return (...)
+        }
+      }
+  - pattern: '<$X dangerouslySetInnerHTML=... />'
+  languages: [javascript, typescript]
+  message: $CLASS, $FUNC 
+  severity: WARNING
