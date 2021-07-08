@@ -1,0 +1,11 @@
+rules:
+- id: imports
+  message: $PACKAGE
+  severity: INFO
+  languages: [javascript,typescript]
+  pattern: import $WHATEVER from "$PACKAGE"
+  paths:
+    exclude:
+    - 'nms/*'
+    - 'nms/'
+    - 'nms'
