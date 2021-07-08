@@ -6,6 +6,9 @@ rules:
   pattern: import $WHATEVER from "$PACKAGE"
   paths:
     exclude:
+    - 'node_modules/*'
+    - 'node_modules/'
+    - 'node_modules'
     - 'nms/*'
     - 'nms/'
     - 'nms'
