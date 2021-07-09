@@ -21,6 +21,7 @@ rules:
     source: https://semgrep.dev/r/python.flask.security.unescaped-template-extension.unescaped-template-extension
   patterns:
   - pattern: flask.render_template("$PATH", ..., $VAR=$VALUE, ...)
+  - pattern-not-regex: .*\.html
   languages:
   - python
   severity: WARNING
