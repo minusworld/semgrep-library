@@ -1,0 +1,19 @@
+rules:
+- id: method-parameter-formatted-sql
+  message: $OBJ.$METHOD
+  languages: [java]
+  severity: INFO
+  mode: taint
+  pattern-sources:
+  - pattern: |
+      $RETURNTYPE $METHODNAME(..., $TYPE $PARAMETER, ...) {
+        ...
+      }
+  pattern-sinks:
+  - patterns:
+    - pattern: |
+        "$SQLSTATEMENT" + $PARAMETER
+    - metavariable-regex:
+        metavariable: $SQLSTATEMENT
+        regex: (?i)(select|delete|insert).*
+

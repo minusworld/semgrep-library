@@ -1,0 +1,12 @@
+rules:
+- id: user-input
+  message: $OBJ.$SINK
+  languages: [java]
+  severity: INFO
+  patterns:
+  - pattern-inside: |
+      @RequestMapping(...)
+      $RETURNTYPE $METHODNAME(..., $TYPE $PARAMETER, ...) {
+        ...
+      }
+  - pattern: <... $OBJ.$SINK(..., <... $PARAM ...>, ...) ...>
