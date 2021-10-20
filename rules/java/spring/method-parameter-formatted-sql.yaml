@@ -9,8 +9,11 @@ rules:
         ...
       }
   - patterns:
-    - pattern: |
-        "$SQLSTATEMENT" + $PARAMETER
+    - pattern-either:
+      - pattern: |
+          "$SQLSTATEMENT" + $PARAMETER
+      - pattern: |
+          String.format("$SQLSTATEMENT", ..., $PARAMETER, ...)
     - metavariable-regex:
         metavariable: $SQLSTATEMENT
         regex: (?i)(select|delete|insert).*
