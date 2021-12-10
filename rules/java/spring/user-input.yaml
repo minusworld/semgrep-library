@@ -9,4 +9,4 @@ rules:
       $RETURNTYPE $METHODNAME(..., $TYPE $PARAMETER, ...) {
         ...
       }
-  - pattern: <... $OBJ.$SINK(..., <... $PARAMETER ...>, ...) ...>
+  - pattern: <... $OBJ.$SINK(..., <... $PARAM ...>, ...) ...>
