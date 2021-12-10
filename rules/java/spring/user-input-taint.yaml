@@ -11,4 +11,6 @@ rules:
         ...
       }
   pattern-sinks:
-  - pattern: $OBJ.$SINK(..., $PARAMETER, ...)
+  - patterns:
+    - pattern: $OBJ.$SINK(...)
+    - pattern: $PARAMETER
